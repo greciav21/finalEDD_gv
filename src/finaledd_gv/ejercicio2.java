@@ -3,7 +3,7 @@ package finaledd_gv;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class ejercicio2 {
 
@@ -16,7 +16,7 @@ public class ejercicio2 {
         }
     }
 
-    public void Escribir(String matriz) {
+    public void Escribir(String mat) {
         // Declaramos aquellas variables que nos ayudaran a manipular y a escribir el archivo
         File archivo;
         FileWriter escribir;
@@ -24,9 +24,9 @@ public class ejercicio2 {
         PrintWriter linea;
         String fila1 = "", fila2 = "";
 
-        archivo = new File("mat.txt");
-        if (!archivo.exists()) {
-            try {
+       archivo = new File("mat.txt");
+       if (!archivo.exists()) {
+           try {
                 archivo.createNewFile();
                 fila1 = JOptionPane.showInputDialog(null, " Ingresa la primera fila de tu matriz " , "Solicitando datos" , 3);
                 fila2 = JOptionPane.showInputDialog(null, " Ingresa la segunda fila de tu matriz " , "Solicitando datos" , 3);
@@ -47,17 +47,12 @@ public class ejercicio2 {
             }
         } else {
                 try {
-                fila1 = JOptionPane.showInputDialog(null, " Ingresa la primera fila de tu matriz " , "Solicitando datos" , 3);
-                fila2 = JOptionPane.showInputDialog(null, " Ingresa la segunda fila de tu matriz " , "Solicitando datos" , 3);
-
+                int nF = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la primera fila que desea en su matriz:"));
+                int nC = Integer.parseInt(JOptionPane.showInputDialog("Chevere, ahora ingrese la segunda fila que desea en su matriz:"));
                 escribir = new FileWriter(archivo, true);
                 linea = new PrintWriter(escribir);
-
-                //Para escribir en el archivo 
-                linea.println(nombre);
-                linea.println(direcc);
-                linea.println(email);
-
+               
+                //Para cerrar el proceso
                 linea.close();
                 escribir.close();
 
@@ -66,25 +61,8 @@ public class ejercicio2 {
             }
 
         }
-
-        /*try{
-            f = new File(matriz);
-            w = new FileWriter(f);
-            bw = new BufferedWriter(w);
-            wr = new PrintWriter(bw);
-            
-            //wr.write(matriz);
-            wr.write(" 1 3 5 6 ");
-            wr.append("2 3 4 5");
-            
-            
-            wr.close();
-            bw.close();
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Ha ocurrido un error" + e);
-        }
-    }
     
+    //Intento fallido
    /* public void Matriz_arch(){
         String[][] m = new String[2][2];
         FileWriter fw = null;
@@ -121,5 +99,41 @@ public class ejercicio2 {
     }
          */
     }
+    
+    public String Leer(String direccion) {
+        
+        String a = "";
+      
+        try{
+            BufferedReader b = new BufferedReader(new FileReader(direccion)); // Para saber donde esta ubicado el archivo q queremos leer
+            String temp = "";
+            String bRead;
+            // Con este ciclo se guarda el texto del archivo en nuestra variable temporal
+            while((bRead = b.readLine())!= null){ 
+                temp += bRead;
+            }
+            //Se relocaliza el contenido del temporal en la variable a
+            a = temp;
+   
+        }catch(Exception e){
+            System.err.println("Ha ocurrido un error con el archivo"); 
+        }
+         return a;
+    }
+       
+        /*File f = new File(direccion);
+        if (f.exists()) {
+            BufferedReader br = new BufferedReader(new FileReader(direccion));
+            String s;
+            s = br.readLine();
+            String datos = s;
+            while ((s = br.readLine()) != null) {
+                datos += "\n" + s;//imprimir linea con un salto de linea
+            }
+            return datos;
+        }
+        return null;*/
+    }
+
 
 }

@@ -9,7 +9,7 @@ public class FinalEDD_gv {
 
     public static void main(String[] args) {
         //Respuesta de la pregunta 4: .gitgnore
-        //Respuesta de la pregunta 5:  git init
+        //Respuesta de la pregunta 5:  Una vez se crea el repositorio en git hub, se ingresa al git bash desde la carpeta del proyecto y se usa el comando: git init
         
         /*ejercicio3 list2 = new ejercicio3();
         
@@ -25,12 +25,12 @@ public class FinalEDD_gv {
         list1.Agg_nodo1(9);
         //list1.Mostrar_list1();
         
-        //list1.cant_Nodos();
+        list1.cant_Nodos();
         
         ejercicio2 a = new ejercicio2();
-        a.Crear_matriz();
+        a.Escribir("Primerap");
+        System.out.println(a.Leer("mat.txt"));
        
-        a.Escribir("mat.txt");
        
     }
     

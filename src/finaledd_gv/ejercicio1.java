@@ -32,10 +32,7 @@ public class ejercicio1 {
             new Nodo(num_ing, L).ant = aux;
         }
     }
-    
-  
-   
-    
+ 
     public void Mostrar_list1(){
         aux = L;
         String x = "";
@@ -51,7 +48,7 @@ public class ejercicio1 {
         aux = L.ant;
         int cont = 0;
         while(aux != L){
-            cont = cont + 1;
+            cont += 1;
             aux = aux.ant;
         } 
         cont = cont + 1 ;
