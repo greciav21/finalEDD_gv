@@ -23,15 +23,15 @@ public class FinalEDD_gv {
         list1.Agg_nodo1(5);
         list1.Agg_nodo1(7);
         list1.Agg_nodo1(9);
-        //list1.Mostrar_list1();
+        list1.Mostrar_list1();
+         list1.cant_Nodos();
+        //list1.Reverse_();
         
-        list1.cant_Nodos();
-        
-        ejercicio2 a = new ejercicio2();
+        /*ejercicio2 a = new ejercicio2();
         a.Escribir("Primerap");
         System.out.println(a.Leer("mat.txt"));
        
-       
+*/
     }
     
 }
