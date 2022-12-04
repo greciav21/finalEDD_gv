@@ -36,29 +36,17 @@ public class ejercicio3 {
         System.out.println("La lista se compone de: " + num);
     }
     
-    public Nodos Mostrar_reverse(){
-        aux = L;
-        if(L == null)
-            return null;
-        if(L.sig == null)
-            return L;
+    public int Mostrar_reverse(Nodos node){
+        if(node == null)
+            return 0;
+        if(node.sig == null)
+            return node.num;
         else{
-            while(aux.sig != null){
-                aux = aux.sig;
-            
-            }
-        
-            
-        }
-        String num = "";
-        while (aux != null)
-        {
-            num += aux.num + " - ";
-            aux = aux.sig;
-        }
-        System.out.println("La lista se compone de: " + num);
+            node = node.sig;
+            Mostrar_reverse(node); 
+            return node.num;
+        } 
     }
-    
 
-    
-}
+     
+    }

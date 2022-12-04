@@ -15,7 +15,7 @@ public class ejercici02 {
         nC = b;
     }  
     //Para llenar la matriz
-    public void Llenar_matriz() {
+   /* public void Llenar_matriz() {
         matriz = new int[nF][nC];
         try{
             File f1 = new File(nomb + ".txt");
@@ -62,6 +62,6 @@ public class ejercici02 {
             }
                 JOptionPane.showMessageDialog(null, result);*/
        
-       
-    }
+      
+    
 }
